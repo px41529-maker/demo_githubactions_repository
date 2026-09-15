@@ -1,0 +1,19 @@
+name: Testing single workflow
+
+on:
+   workflow_dispatch
+
+env:
+    cloud: AWS-Cloud  
+
+jobs:
+  greeting-job:
+    runs-on: ubuntu-latest
+    env:
+      Greeting: hello
+    steps: 
+      - name: "say hello from Prakash"
+        run: echo "$Greeting $first_name is using $cloud"
+        env:
+          first_name: Raj
+        
